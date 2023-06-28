@@ -1,0 +1,8 @@
+[package]
+name = "mkvcli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ctrlc = "3.4.0"
+rayon = "1.7.0"
