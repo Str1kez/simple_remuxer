@@ -22,6 +22,7 @@ impl Config {
         })
     }
 
+    #[must_use]
     pub fn input_path(&self) -> &str {
         &self.input_path
     }
