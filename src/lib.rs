@@ -1,9 +1,9 @@
 mod cli;
 mod core;
-mod models;
+pub mod models;
 
-use crate::core::make_remux;
-pub use models::Config;
+use core::make_remux;
+use models::Config;
 use std::{error::Error, io, process::Command};
 
 pub fn run(config: &Config) -> Result<(), Box<dyn Error>> {

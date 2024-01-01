@@ -1,6 +1,4 @@
-use crate::models::CustomError;
-
-pub use crate::models::Config;
+use crate::models::{error::CustomError, Config};
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 use std::{
     error::Error,

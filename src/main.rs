@@ -1,4 +1,4 @@
-use mkvcli::{run, Config};
+use mkvcli::{models::Config, run};
 use std::{env, process};
 
 fn main() {
