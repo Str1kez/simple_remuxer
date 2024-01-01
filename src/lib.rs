@@ -5,6 +5,7 @@ pub mod models;
 use core::make;
 use models::Config;
 use std::{error::Error, io, process::Command};
+
 #[allow(clippy::missing_errors_doc)]
 pub fn run(config: &Config) -> Result<(), Box<dyn Error>> {
     let path = config.input_path();

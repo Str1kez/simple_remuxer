@@ -1,6 +1,6 @@
 [hooks]
 pre-commit = "cargo fmt --check"
-pre-push = "cargo clippy -- -W clippy::pedantic -D warnings"
+pre-push = "cargo clippy -q -- -W clippy::pedantic -D warnings"
 
 [logging]
 verbose = true
