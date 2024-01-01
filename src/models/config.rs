@@ -7,6 +7,7 @@ pub struct Config {
 }
 
 impl Config {
+    #[allow(clippy::missing_errors_doc)]
     pub fn new<T: Iterator<Item = String>>(args: T) -> Result<Config, Box<dyn Error>> {
         let (mut input_path, mut output_path) = parse_args(args)?;
         if let Some(deleted_slash) = input_path.strip_suffix('/') {
@@ -24,6 +25,7 @@ impl Config {
     pub fn input_path(&self) -> &str {
         &self.input_path
     }
+    #[must_use]
     pub fn output_path(&self) -> &str {
         &self.output_path
     }

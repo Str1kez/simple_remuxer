@@ -1,0 +1,6 @@
+[hooks]
+pre-commit = "cargo fmt --check --all"
+pre-push = "cargo clippy -- -W clippy::pedantic"
+
+[logging]
+verbose = true

@@ -1,4 +1,4 @@
-use crate::models::{error::CustomError, Config};
+use crate::models::{error::Custom, Config};
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 use std::{
     error::Error,
@@ -9,7 +9,7 @@ use std::{
     },
 };
 
-pub fn make_remux(config: &Config, dirs: Vec<&str>) -> Result<(), Box<dyn Error>> {
+pub fn make(config: &Config, dirs: Vec<&str>) -> Result<(), Box<dyn Error>> {
     let workers: RwLock<Vec<Child>> = RwLock::new(Vec::with_capacity(dirs.len()));
     let running = Arc::new(AtomicBool::new(true));
     let running_clone = Arc::clone(&running);
@@ -53,7 +53,7 @@ pub fn make_remux(config: &Config, dirs: Vec<&str>) -> Result<(), Box<dyn Error>
             }
         }) {
             return if is_error {
-                Err(Box::new(CustomError::new(
+                Err(Box::new(Custom::new(
                     "Something wrong in ffmpeg subprocesses",
                 )))
             } else {
